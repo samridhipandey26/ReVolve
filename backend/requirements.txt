@@ -1,0 +1,11 @@
+# Core FastAPI & ASGI dependencies
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+pydantic>=2.6.0
+python-multipart>=0.0.9
+
+# Image Processing & Vision AI (Zero-Shot CLIP Classification)
+# NOTE FOR HACKATHON PITCH: Pretrained vision model, zero/few-shot for demo — production would fine-tune on a labeled C&D dataset.
+Pillow>=10.0.0
+torch>=2.0.0
+transformers>=4.38.0

@@ -1,0 +1,87 @@
+[
+  {
+    "item": "Tesla Model 3 2170 Module — Sample 1",
+    "stream": "battery",
+    "chemistry": "NMC",
+    "remaining_capacity_pct": 91.5,
+    "soh_percentage": 91.5,
+    "cycle_count": 420,
+    "internal_resistance": "low",
+    "voltage_stability": "stable",
+    "age_years": 1.5,
+    "has_physical_damage": false,
+    "has_thermal_irregularity": false,
+    "properties": {
+      "nominal_capacity_ah": 230.0,
+      "nominal_voltage_v": 3.7
+    }
+  },
+  {
+    "item": "Tata Nexon EV LFP Pack — Sample 2",
+    "stream": "battery",
+    "chemistry": "LFP",
+    "remaining_capacity_pct": 76.0,
+    "soh_percentage": 76.0,
+    "cycle_count": 1650,
+    "internal_resistance": "moderate",
+    "voltage_stability": "unstable",
+    "age_years": 3.2,
+    "has_physical_damage": false,
+    "has_thermal_irregularity": false,
+    "properties": {
+      "nominal_capacity_ah": 100.0,
+      "nominal_voltage_v": 3.2
+    }
+  },
+  {
+    "item": "Nissan Leaf Gen 2 Module — Sample 3",
+    "stream": "battery",
+    "chemistry": "NMC",
+    "remaining_capacity_pct": 64.2,
+    "soh_percentage": 64.2,
+    "cycle_count": 2100,
+    "internal_resistance": "moderate",
+    "voltage_stability": "stable",
+    "age_years": 4.5,
+    "has_physical_damage": false,
+    "has_thermal_irregularity": false,
+    "properties": {
+      "nominal_capacity_ah": 60.0,
+      "nominal_voltage_v": 7.4
+    }
+  },
+  {
+    "item": "Commercial Bus Pack Module — Sample 4",
+    "stream": "battery",
+    "chemistry": "NMC",
+    "remaining_capacity_pct": 41.0,
+    "soh_percentage": 41.0,
+    "cycle_count": 3400,
+    "internal_resistance": "high",
+    "voltage_stability": "unstable",
+    "age_years": 6.0,
+    "has_physical_damage": true,
+    "has_thermal_irregularity": false,
+    "properties": {
+      "nominal_capacity_ah": 180.0,
+      "nominal_voltage_v": 3.7
+    }
+  },
+  {
+    "item": "Accident Damaged 2-Wheeler Pack — Sample 5",
+    "stream": "battery",
+    "chemistry": "NMC",
+    "remaining_capacity_pct": 22.0,
+    "soh_percentage": 22.0,
+    "cycle_count": 800,
+    "internal_resistance": "high",
+    "voltage_stability": "unstable",
+    "age_years": 2.0,
+    "has_physical_damage": true,
+    "has_thermal_irregularity": true,
+    "properties": {
+      "nominal_capacity_ah": 40.0,
+      "nominal_voltage_v": 3.7
+    }
+  }
+]

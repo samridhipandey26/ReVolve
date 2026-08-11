@@ -1,0 +1,70 @@
+[
+  {
+    "item": "Concrete Slab - Sample 1 (Structural Precast)",
+    "stream": "construction",
+    "material_type": "concrete",
+    "classification_confidence": 96.5,
+    "is_structural_grade": true,
+    "is_mixed_with_other_debris": false,
+    "visible_damage_level": "none",
+    "properties": {
+      "compressive_strength_mpa": 35.0,
+      "rebar_exposure": "None"
+    }
+  },
+  {
+    "item": "Heritage Clay Brick - Sample 2 (Vintage Masonry)",
+    "stream": "construction",
+    "material_type": "brick",
+    "classification_confidence": 94.0,
+    "is_structural_grade": true,
+    "is_mixed_with_other_debris": false,
+    "visible_damage_level": "minor",
+    "properties": {
+      "mortar_adhesion": "Surface lime mortar",
+      "intact_ratio_pct": 92.0
+    }
+  },
+  {
+    "item": "Hardwood Timber Truss - Sample 3 (Seasoned Teak)",
+    "stream": "construction",
+    "material_type": "wood",
+    "classification_confidence": 92.0,
+    "is_structural_grade": true,
+    "is_mixed_with_other_debris": false,
+    "visible_damage_level": "none",
+    "properties": {
+      "moisture_content_pct": 11.5,
+      "pest_damage": "None"
+    }
+  },
+  {
+    "item": "Deformed Steel Rebar - Sample 4 (Reinforcing Rods)",
+    "stream": "construction",
+    "material_type": "metal",
+    "classification_confidence": 98.0,
+    "is_structural_grade": true,
+    "is_mixed_with_other_debris": true,
+    "visible_damage_level": "minor",
+    "properties": {
+      "grade": "Fe500",
+      "surface_condition": "Surface oxidation only"
+    }
+  },
+  {
+    "item": "Contaminated Mixed Debris - Sample 5 (Demolition Rubble)",
+    "stream": "construction",
+    "material_type": "mixed",
+    "classification_confidence": 88.5,
+    "is_structural_grade": false,
+    "is_mixed_with_other_debris": true,
+    "visible_damage_level": "significant",
+    "properties": {
+      "contaminants": [
+        "Trace asbestos plaster",
+        "chemical residue"
+      ],
+      "heterogeneity": "Severe"
+    }
+  }
+]

@@ -1,8 +1,10 @@
 /**
- * api.js - Centralized API Service for S15 Waste-Recovery Platform
+ * api.js - Centralized API Service for ReVolve Circular Waste-Recovery Platform
+ * Uses environment variable VITE_API_BASE_URL for configurable deployment.
  */
 
-const API_BASE = '/api'
+const RAW_BASE = import.meta.env.VITE_API_BASE_URL || ''
+const API_BASE = RAW_BASE ? `${RAW_BASE.replace(/\/+$/, '')}/api` : '/api'
 
 export async function classifyImageApi(file) {
   const formData = new FormData()

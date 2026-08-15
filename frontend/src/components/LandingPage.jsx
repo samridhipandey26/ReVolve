@@ -255,11 +255,10 @@ export default function LandingPage({ onStartAssessment }) {
                     <button
                       type="button"
                       onClick={() => setActiveHeroTab('construction')}
-                      className={`py-2 px-3 rounded-lg text-xs font-bold transition-all flex items-center justify-center space-x-2 ${
-                        activeHeroTab === 'construction'
+                      className={`py-2 px-3 rounded-lg text-xs font-bold transition-all flex items-center justify-center space-x-2 ${activeHeroTab === 'construction'
                           ? 'bg-emerald-600 text-white shadow-md'
                           : 'text-slate-400 hover:text-slate-200'
-                      }`}
+                        }`}
                     >
                       <span>🏗️</span>
                       <span>Demolition Debris</span>
@@ -267,11 +266,10 @@ export default function LandingPage({ onStartAssessment }) {
                     <button
                       type="button"
                       onClick={() => setActiveHeroTab('battery')}
-                      className={`py-2 px-3 rounded-lg text-xs font-bold transition-all flex items-center justify-center space-x-2 ${
-                        activeHeroTab === 'battery'
+                      className={`py-2 px-3 rounded-lg text-xs font-bold transition-all flex items-center justify-center space-x-2 ${activeHeroTab === 'battery'
                           ? 'bg-cyan-600 text-white shadow-md'
                           : 'text-slate-400 hover:text-slate-200'
-                      }`}
+                        }`}
                     >
                       <span>⚡</span>
                       <span>EV Battery Pack</span>
@@ -515,11 +513,10 @@ export default function LandingPage({ onStartAssessment }) {
                 key={pathway.id}
                 type="button"
                 onClick={() => setActivePathwayTab(pathway.id)}
-                className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center space-x-2 cursor-pointer ${
-                  activePathwayTab === pathway.id
+                className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center space-x-2 cursor-pointer ${activePathwayTab === pathway.id
                     ? `${pathway.badgeClass} border shadow-lg ring-1 ring-white/10`
                     : 'bg-slate-900/90 text-slate-400 hover:text-slate-200 border border-slate-800'
-                }`}
+                  }`}
               >
                 <span>{pathway.icon}</span>
                 <span>{pathway.name}</span>
@@ -580,9 +577,8 @@ export default function LandingPage({ onStartAssessment }) {
               <div
                 key={p.id}
                 onClick={() => setActivePathwayTab(p.id)}
-                className={`p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 cursor-pointer transition-all duration-200 ${p.borderHover} ${
-                  activePathwayTab === p.id ? 'ring-2 ring-emerald-400/40 bg-slate-900' : ''
-                }`}
+                className={`p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 cursor-pointer transition-all duration-200 ${p.borderHover} ${activePathwayTab === p.id ? 'ring-2 ring-emerald-400/40 bg-slate-900' : ''
+                  }`}
               >
                 <div className="text-2xl mb-2">{p.icon}</div>
                 <div className="text-sm font-bold text-white mb-1">{p.name}</div>

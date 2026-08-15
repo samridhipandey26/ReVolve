@@ -24,6 +24,8 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
   const [isClassifying, setIsClassifying] = useState(false)
   const [classificationResult, setClassificationResult] = useState(null)
   const [isManuallyOverridden, setIsManuallyOverridden] = useState(false)
+  // isUncertain=true when backend confidence < 75% — shows prominent override prompt
+  const [isUncertain, setIsUncertain] = useState(false)
 
   // Assessment loading state
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -112,12 +114,16 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
       const res = await classifyImageApi(file)
       const detectedMat = res.material_type || 'concrete'
       const conf = typeof res.confidence === 'number' ? res.confidence : 90.0
+      // uncertain flag from backend (confidence < 75%) — auto-expand override dropdown
+      const uncertain = !!res.uncertain
 
       setMaterialType(detectedMat)
       setClassificationConfidence(conf)
+      setIsUncertain(uncertain)
       setClassificationResult({
         material_type: detectedMat,
         confidence: conf,
+        uncertain,
       })
 
       // Default contextual questions based on detected material
@@ -345,44 +351,74 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
             )}
           </div>
 
-          {/* Classification Status Banner */}
+          {/* Classification Status Banner — confident vs uncertain */}
           {isClassifying && (
             <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center space-x-3 text-xs text-emerald-300">
               <span className="w-4 h-4 border-2 border-emerald-400 border-t-transparent rounded-full animate-spin shrink-0" />
-              <span>Analyzing visual features with CLIP zero-shot model...</span>
+              <span>Analysing your photo...</span>
             </div>
           )}
 
           {classificationResult && !isClassifying && (
-            <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-between text-xs">
-              <div className="flex items-center space-x-2">
-                <span className="text-emerald-400 font-bold">✓</span>
-                <span className="text-slate-300">
-                  Detected: <strong className="text-white capitalize">{classificationResult.material_type}</strong>
-                </span>
-                <span className="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono text-[10px]">
-                  {classificationResult.confidence.toFixed(1)}% confidence
-                </span>
+            isUncertain ? (
+              // LOW CONFIDENCE — amber warning, override dropdown will be highlighted
+              <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/40 space-y-1.5 text-xs">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-amber-400 font-bold">⚠</span>
+                    <span className="text-amber-200 font-semibold">
+                      Low confidence detection — please confirm below
+                    </span>
+                  </div>
+                  <span className="px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-400 font-mono text-[10px]">
+                    {classificationResult.confidence.toFixed(1)}%
+                  </span>
+                </div>
+                <p className="text-amber-300/80 leading-relaxed">
+                  Best guess: <strong className="capitalize text-amber-200">{classificationResult.material_type}</strong> — but we're not confident. Please use the dropdown below to confirm or correct the material type before submitting.
+                </p>
               </div>
-              {isManuallyOverridden && (
-                <span className="text-[10px] text-amber-400 font-medium">Manually Modified</span>
-              )}
-            </div>
+            ) : (
+              // HIGH CONFIDENCE — green confirmation
+              <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-between text-xs">
+                <div className="flex items-center space-x-2">
+                  <span className="text-emerald-400 font-bold">✓</span>
+                  <span className="text-slate-300">
+                    Detected: <strong className="text-white capitalize">{classificationResult.material_type}</strong>
+                  </span>
+                  <span className="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono text-[10px]">
+                    {classificationResult.confidence.toFixed(1)}% confidence
+                  </span>
+                </div>
+                {isManuallyOverridden && (
+                  <span className="text-[10px] text-amber-400 font-medium">Manually Modified</span>
+                )}
+              </div>
+            )
           )}
         </div>
 
-        {/* 3. Material Type Selector (with Manual Override) */}
+        {/* 3. Material Type Selector — highlighted amber ring when classification is uncertain */}
         <div className="space-y-1.5">
           <div className="flex items-center justify-between">
             <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400">
               2. Material Classification
             </label>
-            <span className="text-[10px] text-slate-500">Manual Override Dropdown</span>
+            {isUncertain && !isManuallyOverridden && (
+              <span className="text-[10px] text-amber-400 font-semibold animate-pulse">⚠ Confirm required</span>
+            )}
+            {isManuallyOverridden && (
+              <span className="text-[10px] text-emerald-400 font-semibold">✓ Confirmed</span>
+            )}
           </div>
           <select
             value={materialType}
             onChange={handleMaterialOverride}
-            className="w-full bg-slate-950/90 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition"
+            className={`w-full bg-slate-950/90 border rounded-xl px-3.5 py-2.5 text-xs text-slate-200 focus:outline-none transition ${
+              isUncertain && !isManuallyOverridden
+                ? 'border-amber-500/60 ring-2 ring-amber-400/30 focus:border-amber-400 focus:ring-amber-400/50'
+                : 'border-slate-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500'
+            }`}
           >
             {MATERIAL_OPTIONS.map((opt) => (
               <option key={opt.id} value={opt.id}>
@@ -390,6 +426,11 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
               </option>
             ))}
           </select>
+          {isUncertain && !isManuallyOverridden && (
+            <p className="text-[11px] text-amber-400/80 leading-relaxed">
+              Select the correct material from the dropdown above, then submit your assessment.
+            </p>
+          )}
         </div>
 
         {/* 4. Follow-up Context Questions */}

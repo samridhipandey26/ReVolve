@@ -225,13 +225,13 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
   return (
     <div className="space-y-6">
       {/* 1. Try a Sample Preset Section (Quick Demo Access) */}
-      <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 space-y-3">
+      <div className="rounded-2xl border border-slate-800 bg-[#121B24]/60 p-5 space-y-3">
         <div className="flex items-center justify-between">
           <span className="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center space-x-1.5">
             <span>⚡</span>
             <span>Try a Preset Sample</span>
           </span>
-          <span className="text-[10px] text-emerald-400 font-medium">1-Click Live Assessment</span>
+          <span className="text-[10px] text-[#FFB547] font-medium">1-Click Live Assessment</span>
         </div>
         <p className="text-xs text-slate-400">
           Skip upload and execute standard test cases directly through the decision engine:
@@ -246,7 +246,7 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
                 type="button"
                 onClick={() => handleSelectSample(sample)}
                 disabled={isSubmitting}
-                className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800/90 text-slate-200 hover:bg-emerald-600 hover:text-white border border-slate-700/80 hover:border-emerald-500 transition shadow-sm disabled:opacity-50"
+                className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800/90 text-slate-200 hover:bg-orange-600 hover:text-white border border-slate-700/80 hover:border-[#FF7A3D] transition shadow-sm disabled:opacity-50"
               >
                 {iconLabel}
               </button>
@@ -256,10 +256,10 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
       </div>
 
       {/* Behind the scenes "How this works" Collapsible Card */}
-      <details className="group rounded-2xl border border-slate-800/90 bg-slate-900/40 p-4 transition text-xs text-slate-400">
+      <details className="group rounded-2xl border border-slate-800/90 bg-[#121B24]/40 p-4 transition text-xs text-slate-400">
         <summary className="font-semibold text-slate-300 cursor-pointer flex items-center justify-between list-none select-none">
           <span className="flex items-center space-x-2">
-            <span className="text-emerald-400">💡</span>
+            <span className="text-[#FFB547]">💡</span>
             <span>How Module A Works (Behind the Scenes)</span>
           </span>
           <span className="text-slate-500 text-[10px] group-open:rotate-180 transition-transform">▼</span>
@@ -277,16 +277,16 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
       {/* Main Input Form */}
       <form
         onSubmit={handleSubmitAssessment}
-        className="rounded-2xl border border-slate-800 bg-slate-900/80 backdrop-blur-md p-6 space-y-6 shadow-xl shadow-black/20"
+        className="rounded-2xl border border-slate-800 bg-[#121B24]/80 backdrop-blur-md p-6 space-y-6 shadow-xl shadow-black/20"
       >
         {/* Form Title & Item Label */}
         <div className="space-y-2 border-b border-slate-800 pb-4">
           <div className="flex items-center justify-between">
             <h3 className="text-sm font-bold uppercase tracking-wider text-white flex items-center space-x-2">
-              <span className="text-emerald-400 text-base">🏗️</span>
+              <span className="text-[#FFB547] text-base">🏗️</span>
               <span>Demolition Waste Assessment</span>
             </h3>
-            <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">
+            <span className="text-[10px] px-2 py-0.5 rounded bg-[#FF7A3D]/10 text-[#FFB547] border border-[#FF7A3D]/20 font-mono">
               Module A
             </span>
           </div>
@@ -295,7 +295,7 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
             value={itemLabel}
             onChange={(e) => setItemLabel(e.target.value)}
             placeholder="Item Label / Batch Name (e.g. Concrete Slab - North Wing)"
-            className="w-full bg-slate-950/80 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition"
+            className="w-full bg-[#0B1117]/80 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#FF7A3D] focus:ring-1 focus:ring-[#FF7A3D] transition"
           />
         </div>
 
@@ -310,10 +310,10 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
             onClick={() => fileInputRef.current?.click()}
             className={`border-2 border-dashed rounded-2xl p-4 text-center cursor-pointer transition-all duration-200 ${
               isClassifying
-                ? 'border-emerald-500/60 bg-emerald-500/5 animate-pulse'
+                ? 'border-[#FF7A3D]/60 bg-[#FF7A3D]/5 animate-pulse'
                 : imagePreview
-                ? 'border-emerald-500/40 bg-slate-950/60'
-                : 'border-slate-800 hover:border-slate-700 bg-slate-950/40 hover:bg-slate-950/70'
+                ? 'border-[#FF7A3D]/40 bg-[#0B1117]/60'
+                : 'border-slate-800 hover:border-slate-700 bg-[#0B1117]/40 hover:bg-[#0B1117]/70'
             }`}
           >
             <input
@@ -353,8 +353,8 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
 
           {/* Classification Status Banner — confident vs uncertain */}
           {isClassifying && (
-            <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center space-x-3 text-xs text-emerald-300">
-              <span className="w-4 h-4 border-2 border-emerald-400 border-t-transparent rounded-full animate-spin shrink-0" />
+            <div className="p-3 rounded-xl bg-[#FF7A3D]/10 border border-[#FF7A3D]/30 flex items-center space-x-3 text-xs text-orange-300">
+              <span className="w-4 h-4 border-2 border-[#FFB547] border-t-transparent rounded-full animate-spin shrink-0" />
               <span>Analysing your photo...</span>
             </div>
           )}
@@ -380,13 +380,13 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
               </div>
             ) : (
               // HIGH CONFIDENCE — green confirmation
-              <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-between text-xs">
+              <div className="p-3 rounded-xl bg-[#0B1117]/80 border border-slate-800 flex items-center justify-between text-xs">
                 <div className="flex items-center space-x-2">
-                  <span className="text-emerald-400 font-bold">✓</span>
+                  <span className="text-[#FFB547] font-bold">✓</span>
                   <span className="text-slate-300">
                     Detected: <strong className="text-white capitalize">{classificationResult.material_type}</strong>
                   </span>
-                  <span className="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono text-[10px]">
+                  <span className="px-1.5 py-0.5 rounded bg-[#FF7A3D]/10 text-[#FFB547] font-mono text-[10px]">
                     {classificationResult.confidence.toFixed(1)}% confidence
                   </span>
                 </div>
@@ -408,16 +408,16 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
               <span className="text-[10px] text-amber-400 font-semibold animate-pulse">⚠ Confirm required</span>
             )}
             {isManuallyOverridden && (
-              <span className="text-[10px] text-emerald-400 font-semibold">✓ Confirmed</span>
+              <span className="text-[10px] text-[#FFB547] font-semibold">✓ Confirmed</span>
             )}
           </div>
           <select
             value={materialType}
             onChange={handleMaterialOverride}
-            className={`w-full bg-slate-950/90 border rounded-xl px-3.5 py-2.5 text-xs text-slate-200 focus:outline-none transition ${
+            className={`w-full bg-[#0B1117]/90 border rounded-xl px-3.5 py-2.5 text-xs text-slate-200 focus:outline-none transition ${
               isUncertain && !isManuallyOverridden
                 ? 'border-amber-500/60 ring-2 ring-amber-400/30 focus:border-amber-400 focus:ring-amber-400/50'
-                : 'border-slate-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500'
+                : 'border-slate-800 focus:border-[#FF7A3D] focus:ring-1 focus:ring-[#FF7A3D]'
             }`}
           >
             {MATERIAL_OPTIONS.map((opt) => (
@@ -450,8 +450,8 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
                 onClick={() => setIsMixed(false)}
                 className={`py-2 px-3 rounded-xl text-xs font-semibold transition ${
                   !isMixed
-                    ? 'bg-emerald-600/20 text-emerald-300 border border-emerald-500/50 ring-1 ring-emerald-500/30'
-                    : 'bg-slate-950/60 text-slate-400 hover:text-slate-200 border border-slate-800'
+                    ? 'bg-orange-600/20 text-orange-300 border border-[#FF7A3D]/50 ring-1 ring-[#FF7A3D]/30'
+                    : 'bg-[#0B1117]/60 text-slate-400 hover:text-slate-200 border border-slate-800'
                 }`}
               >
                 No (Clean / Segregated)
@@ -462,7 +462,7 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
                 className={`py-2 px-3 rounded-xl text-xs font-semibold transition ${
                   isMixed
                     ? 'bg-amber-500/20 text-amber-300 border border-amber-500/50 ring-1 ring-amber-500/30'
-                    : 'bg-slate-950/60 text-slate-400 hover:text-slate-200 border border-slate-800'
+                    : 'bg-[#0B1117]/60 text-slate-400 hover:text-slate-200 border border-slate-800'
                 }`}
               >
                 Yes (Co-mingled)
@@ -482,8 +482,8 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
                   onClick={() => setIsStructuralGrade(true)}
                   className={`py-2 px-3 rounded-xl text-xs font-semibold transition ${
                     isStructuralGrade
-                      ? 'bg-emerald-600/20 text-emerald-300 border border-emerald-500/50 ring-1 ring-emerald-500/30'
-                      : 'bg-slate-950/60 text-slate-400 hover:text-slate-200 border border-slate-800'
+                      ? 'bg-orange-600/20 text-orange-300 border border-[#FF7A3D]/50 ring-1 ring-[#FF7A3D]/30'
+                      : 'bg-[#0B1117]/60 text-slate-400 hover:text-slate-200 border border-slate-800'
                   }`}
                 >
                   Yes (Structural Grade)
@@ -494,7 +494,7 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
                   className={`py-2 px-3 rounded-xl text-xs font-semibold transition ${
                     !isStructuralGrade
                       ? 'bg-sky-500/20 text-sky-300 border border-sky-500/50 ring-1 ring-sky-500/30'
-                      : 'bg-slate-950/60 text-slate-400 hover:text-slate-200 border border-slate-800'
+                      : 'bg-[#0B1117]/60 text-slate-400 hover:text-slate-200 border border-slate-800'
                   }`}
                 >
                   No (Non-Structural)
@@ -520,8 +520,8 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
                   onClick={() => setVisibleDamageLevel(dmg.id)}
                   className={`py-2 px-2 rounded-xl text-xs font-semibold transition text-center ${
                     visibleDamageLevel === dmg.id
-                      ? 'bg-slate-800 text-white border border-slate-600 ring-2 ring-emerald-400/40'
-                      : 'bg-slate-950/60 text-slate-400 hover:text-slate-200 border border-slate-800'
+                      ? 'bg-slate-800 text-white border border-slate-600 ring-2 ring-[#FFB547]/40'
+                      : 'bg-[#0B1117]/60 text-slate-400 hover:text-slate-200 border border-slate-800'
                   }`}
                 >
                   {dmg.label}
@@ -535,11 +535,11 @@ export default function ConstructionInputFlow({ onAssessmentComplete, onError })
         <button
           type="submit"
           disabled={isSubmitting || isClassifying}
-          className="w-full py-3.5 px-6 rounded-xl font-bold text-sm bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 text-slate-950 hover:brightness-110 shadow-lg shadow-emerald-950/60 transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-50 cursor-pointer"
+          className="w-full py-3.5 px-6 rounded-xl font-bold text-sm bg-gradient-to-r from-[#FF7A3D] via-teal-500 to-orange-600 text-[#0B1117] hover:brightness-110 shadow-lg shadow-orange-950/60 transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-50 cursor-pointer"
         >
           {isSubmitting ? (
             <>
-              <span className="w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" />
+              <span className="w-4 h-4 border-2 border-[#0B1117] border-t-transparent rounded-full animate-spin" />
               <span>Running Decision Engine...</span>
             </>
           ) : (

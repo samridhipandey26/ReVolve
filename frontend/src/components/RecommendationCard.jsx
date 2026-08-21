@@ -9,13 +9,13 @@ const PATHWAY_CONFIG = {
     label: 'Reuse',
     icon: '♺',
     checkIcon: '✅',
-    badgeClass: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/40',
-    bannerBg: 'bg-gradient-to-r from-emerald-950/90 via-emerald-900/70 to-slate-900/80',
-    bannerBorder: 'border-emerald-500/40',
-    bannerText: 'text-emerald-300',
-    bannerAccent: 'text-emerald-200',
-    barColor: 'bg-gradient-to-r from-emerald-500 to-green-400',
-    glowClass: 'shadow-[0_0_30px_rgba(16,185,129,0.15)] border-emerald-500/30',
+    badgeClass: 'bg-[#FF7A3D]/15 text-orange-300 border-[#FF7A3D]/40',
+    bannerBg: 'bg-gradient-to-r from-orange-950/90 via-orange-900/70 to-[#121B24]/80',
+    bannerBorder: 'border-[#FF7A3D]/40',
+    bannerText: 'text-orange-300',
+    bannerAccent: 'text-orange-200',
+    barColor: 'bg-gradient-to-r from-[#FF7A3D] to-green-400',
+    glowClass: 'shadow-[0_0_30px_rgba(16,185,129,0.15)] border-[#FF7A3D]/30',
     tagline: 'High-Value Direct Salvage & Deployment',
     summaryTemplate: (reasoning) =>
       reasoning
@@ -27,11 +27,11 @@ const PATHWAY_CONFIG = {
     icon: '🛠️',
     checkIcon: '🔧',
     badgeClass: 'bg-teal-500/15 text-teal-300 border-teal-500/40',
-    bannerBg: 'bg-gradient-to-r from-teal-950/90 via-teal-900/70 to-slate-900/80',
+    bannerBg: 'bg-gradient-to-r from-teal-950/90 via-teal-900/70 to-[#121B24]/80',
     bannerBorder: 'border-teal-500/40',
     bannerText: 'text-teal-300',
     bannerAccent: 'text-teal-200',
-    barColor: 'bg-gradient-to-r from-teal-500 to-emerald-400',
+    barColor: 'bg-gradient-to-r from-teal-500 to-[#FFB547]',
     glowClass: 'shadow-[0_0_30px_rgba(20,184,166,0.15)] border-teal-500/30',
     tagline: 'Mechanical Restoration, Cleaning & Rebalancing',
     summaryTemplate: (reasoning) =>
@@ -44,7 +44,7 @@ const PATHWAY_CONFIG = {
     icon: '⚡',
     checkIcon: '🔄',
     badgeClass: 'bg-sky-500/15 text-sky-300 border-sky-500/40',
-    bannerBg: 'bg-gradient-to-r from-sky-950/90 via-sky-900/70 to-slate-900/80',
+    bannerBg: 'bg-gradient-to-r from-sky-950/90 via-sky-900/70 to-[#121B24]/80',
     bannerBorder: 'border-sky-500/40',
     bannerText: 'text-sky-300',
     bannerAccent: 'text-sky-200',
@@ -61,7 +61,7 @@ const PATHWAY_CONFIG = {
     icon: '♻️',
     checkIcon: '♻️',
     badgeClass: 'bg-amber-500/15 text-amber-300 border-amber-500/40',
-    bannerBg: 'bg-gradient-to-r from-amber-950/90 via-amber-900/60 to-slate-900/80',
+    bannerBg: 'bg-gradient-to-r from-amber-950/90 via-amber-900/60 to-[#121B24]/80',
     bannerBorder: 'border-amber-500/40',
     bannerText: 'text-amber-300',
     bannerAccent: 'text-amber-200',
@@ -78,7 +78,7 @@ const PATHWAY_CONFIG = {
     icon: '⚠️',
     checkIcon: '⚠️',
     badgeClass: 'bg-rose-500/15 text-rose-300 border-rose-500/40',
-    bannerBg: 'bg-gradient-to-r from-rose-950/90 via-rose-900/60 to-slate-900/80',
+    bannerBg: 'bg-gradient-to-r from-rose-950/90 via-rose-900/60 to-[#121B24]/80',
     bannerBorder: 'border-rose-500/40',
     bannerText: 'text-rose-300',
     bannerAccent: 'text-rose-200',
@@ -116,7 +116,7 @@ function buildSummary(config, reasoning) {
 export default function RecommendationCard({ assessment }) {
   if (!assessment) {
     return (
-      <div className="rounded-2xl border border-slate-800/80 bg-slate-900/40 p-10 text-center backdrop-blur-sm">
+      <div className="rounded-2xl border border-slate-800/80 bg-[#121B24]/40 p-10 text-center backdrop-blur-sm">
         <div className="w-14 h-14 rounded-2xl bg-slate-800/80 flex items-center justify-center mx-auto mb-4 text-slate-500 text-2xl">
           🔍
         </div>
@@ -151,7 +151,7 @@ export default function RecommendationCard({ assessment }) {
   return (
     <div
       key={`${item}-${recommended_pathway}-${confidence}`}
-      className={`rounded-2xl border bg-slate-900/80 backdrop-blur-md overflow-hidden transition-all duration-300 animate-card-appear ${config.glowClass}`}
+      className={`rounded-2xl border bg-[#121B24]/80 backdrop-blur-md overflow-hidden transition-all duration-300 animate-card-appear ${config.glowClass}`}
     >
       {/* 1. Safety Hazard Warning Banner (Conditional — above pathway banner) */}
       {hasSafetyFlags && (
@@ -208,7 +208,7 @@ export default function RecommendationCard({ assessment }) {
         </div>
 
         {/* 4. Assessed Condition & Confidence Bar */}
-        <div className="bg-slate-950/60 rounded-xl p-4 border border-slate-800/60 space-y-4 sm:space-y-0 sm:flex sm:items-center sm:justify-between sm:gap-4">
+        <div className="bg-[#0B1117]/60 rounded-xl p-4 border border-slate-800/60 space-y-4 sm:space-y-0 sm:flex sm:items-center sm:justify-between sm:gap-4">
           <div className="flex-1 min-w-0">
             <div className="text-[10px] font-semibold uppercase tracking-wider text-slate-400 mb-1">
               Assessed Condition
@@ -219,7 +219,7 @@ export default function RecommendationCard({ assessment }) {
           </div>
 
           {/* Confidence Progress Meter */}
-          <div className="sm:w-44 shrink-0 bg-slate-900/90 rounded-lg p-2.5 border border-slate-800">
+          <div className="sm:w-44 shrink-0 bg-[#121B24]/90 rounded-lg p-2.5 border border-slate-800">
             <div className="flex items-center justify-between text-xs mb-1.5">
               <span className="text-slate-400 font-medium text-[11px]">Recommendation confidence</span>
               <span className="text-white font-bold font-mono ml-2">{confidence.toFixed(1)}%</span>
@@ -238,7 +238,7 @@ export default function RecommendationCard({ assessment }) {
           <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
             Why we recommend this
           </div>
-          <p className="text-sm text-slate-300 leading-relaxed bg-slate-950/30 p-3.5 rounded-xl border-l-2 border-slate-700">
+          <p className="text-sm text-slate-300 leading-relaxed bg-[#0B1117]/30 p-3.5 rounded-xl border-l-2 border-slate-700">
             {reasoning || 'No recommendation reasoning available.'}
           </p>
         </div>
@@ -246,22 +246,22 @@ export default function RecommendationCard({ assessment }) {
         {/* 6. Stat Callouts: Value Recovered & Environmental Impact */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
           {/* Estimated Value Recovered */}
-          <div className="rounded-xl bg-gradient-to-br from-slate-900 to-slate-950 p-4 border border-slate-800/90 flex items-start space-x-3.5">
-            <div className="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center text-base shrink-0 font-bold">
+          <div className="rounded-xl bg-gradient-to-br from-[#121B24] to-[#0B1117] p-4 border border-slate-800/90 flex items-start space-x-3.5">
+            <div className="w-9 h-9 rounded-lg bg-[#FF7A3D]/10 text-[#FFB547] border border-[#FF7A3D]/20 flex items-center justify-center text-base shrink-0 font-bold">
               ₹
             </div>
             <div className="min-w-0">
               <div className="text-[10px] font-semibold uppercase tracking-wider text-slate-400 mb-0.5">
                 Value Recovered
               </div>
-              <div className="text-sm font-semibold text-emerald-300 leading-snug">
+              <div className="text-sm font-semibold text-orange-300 leading-snug">
                 {estimated_value_recovered || 'N/A'}
               </div>
             </div>
           </div>
 
           {/* Environmental Impact */}
-          <div className="rounded-xl bg-gradient-to-br from-slate-900 to-slate-950 p-4 border border-slate-800/90 flex items-start space-x-3.5">
+          <div className="rounded-xl bg-gradient-to-br from-[#121B24] to-[#0B1117] p-4 border border-slate-800/90 flex items-start space-x-3.5">
             <div className="w-9 h-9 rounded-lg bg-teal-500/10 text-teal-400 border border-teal-500/20 flex items-center justify-center text-base shrink-0">
               🌱
             </div>
@@ -277,7 +277,7 @@ export default function RecommendationCard({ assessment }) {
         </div>
 
         {/* Optional "How this works" technical detail — collapsed by default */}
-        <details className="group rounded-xl border border-slate-800/80 bg-slate-950/30 text-xs">
+        <details className="group rounded-xl border border-slate-800/80 bg-[#0B1117]/30 text-xs">
           <summary className="px-4 py-2.5 font-medium text-slate-500 cursor-pointer hover:text-slate-300 transition-colors flex items-center justify-between list-none select-none">
             <span className="flex items-center space-x-1.5">
               <span>ℹ️</span>

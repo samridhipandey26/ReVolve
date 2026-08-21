@@ -172,7 +172,7 @@ export default function BatteryInputFlow({ onAssessmentComplete, onError }) {
 
   // Capacity color helpers
   const getCapacityBadgeColor = (val) => {
-    if (val >= 80) return 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10'
+    if (val >= 80) return 'text-[#FFB547] border-[#FF7A3D]/30 bg-[#FF7A3D]/10'
     if (val >= 70) return 'text-teal-400 border-teal-500/30 bg-teal-500/10'
     if (val >= 50) return 'text-sky-400 border-sky-500/30 bg-sky-500/10'
     return 'text-amber-400 border-amber-500/30 bg-amber-500/10'
@@ -181,7 +181,7 @@ export default function BatteryInputFlow({ onAssessmentComplete, onError }) {
   return (
     <div className="space-y-6">
       {/* 1. Try a Sample Preset Section (Quick Demo Access) */}
-      <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 space-y-3">
+      <div className="rounded-2xl border border-slate-800 bg-[#121B24]/60 p-5 space-y-3">
         <div className="flex items-center justify-between">
           <span className="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center space-x-1.5">
             <span>⚡</span>
@@ -218,7 +218,7 @@ export default function BatteryInputFlow({ onAssessmentComplete, onError }) {
       </div>
 
       {/* Behind the scenes "How this works" Collapsible Card */}
-      <details className="group rounded-2xl border border-slate-800/90 bg-slate-900/40 p-4 transition text-xs text-slate-400">
+      <details className="group rounded-2xl border border-slate-800/90 bg-[#121B24]/40 p-4 transition text-xs text-slate-400">
         <summary className="font-semibold text-slate-300 cursor-pointer flex items-center justify-between list-none select-none">
           <span className="flex items-center space-x-2">
             <span className="text-cyan-400">💡</span>
@@ -239,7 +239,7 @@ export default function BatteryInputFlow({ onAssessmentComplete, onError }) {
       {/* Main Telemetry Input Form */}
       <form
         onSubmit={handleSubmit}
-        className="rounded-2xl border border-slate-800 bg-slate-900/80 backdrop-blur-md p-6 space-y-6 shadow-xl shadow-black/20"
+        className="rounded-2xl border border-slate-800 bg-[#121B24]/80 backdrop-blur-md p-6 space-y-6 shadow-xl shadow-black/20"
       >
         {/* Form Title & Item Label */}
         <div className="space-y-2 border-b border-slate-800 pb-4">
@@ -257,7 +257,7 @@ export default function BatteryInputFlow({ onAssessmentComplete, onError }) {
             value={itemLabel}
             onChange={(e) => setItemLabel(e.target.value)}
             placeholder="Pack Label (e.g. Tata Nexon EV LFP Pack - Lot #41)"
-            className="w-full bg-slate-950/80 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition"
+            className="w-full bg-[#0B1117]/80 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition"
           />
         </div>
 
@@ -302,7 +302,7 @@ export default function BatteryInputFlow({ onAssessmentComplete, onError }) {
             <select
               value={chemistry}
               onChange={(e) => setChemistry(e.target.value)}
-              className="w-full bg-slate-950/90 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition"
+              className="w-full bg-[#0B1117]/90 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition"
             >
               <option value="NMC">NMC (Nickel Manganese Cobalt)</option>
               <option value="LFP">LFP (Lithium Iron Phosphate)</option>
@@ -319,7 +319,7 @@ export default function BatteryInputFlow({ onAssessmentComplete, onError }) {
             <select
               value={internalResistance}
               onChange={(e) => setInternalResistance(e.target.value)}
-              className="w-full bg-slate-950/90 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition"
+              className="w-full bg-[#0B1117]/90 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition"
             >
               <option value="low">Low (&lt; 2.5 mΩ — Healthy)</option>
               <option value="moderate">Moderate (2.5 - 8.0 mΩ — Degraded)</option>
@@ -341,7 +341,7 @@ export default function BatteryInputFlow({ onAssessmentComplete, onError }) {
               max="10000"
               value={cycleCount}
               onChange={(e) => setCycleCount(e.target.value)}
-              className="w-full bg-slate-950/90 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-slate-200 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition"
+              className="w-full bg-[#0B1117]/90 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-slate-200 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition"
             />
           </div>
 
@@ -357,7 +357,7 @@ export default function BatteryInputFlow({ onAssessmentComplete, onError }) {
               step="0.5"
               value={ageYears}
               onChange={(e) => setAgeYears(e.target.value)}
-              className="w-full bg-slate-950/90 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-slate-200 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition"
+              className="w-full bg-[#0B1117]/90 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-slate-200 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition"
             />
           </div>
         </div>
@@ -373,8 +373,8 @@ export default function BatteryInputFlow({ onAssessmentComplete, onError }) {
               onClick={() => setVoltageStability('stable')}
               className={`py-2 px-3 rounded-xl text-xs font-semibold transition ${
                 voltageStability === 'stable'
-                  ? 'bg-emerald-600/20 text-emerald-300 border border-emerald-500/50 ring-1 ring-emerald-500/30'
-                  : 'bg-slate-950/60 text-slate-400 hover:text-slate-200 border border-slate-800'
+                  ? 'bg-orange-600/20 text-orange-300 border border-[#FF7A3D]/50 ring-1 ring-[#FF7A3D]/30'
+                  : 'bg-[#0B1117]/60 text-slate-400 hover:text-slate-200 border border-slate-800'
               }`}
             >
               Stable (Delta &lt; 20mV)
@@ -385,7 +385,7 @@ export default function BatteryInputFlow({ onAssessmentComplete, onError }) {
               className={`py-2 px-3 rounded-xl text-xs font-semibold transition ${
                 voltageStability === 'unstable'
                   ? 'bg-amber-500/20 text-amber-300 border border-amber-500/50 ring-1 ring-amber-500/30'
-                  : 'bg-slate-950/60 text-slate-400 hover:text-slate-200 border border-slate-800'
+                  : 'bg-[#0B1117]/60 text-slate-400 hover:text-slate-200 border border-slate-800'
               }`}
             >
               Unstable (Cell Drift / Imbalance)
@@ -412,7 +412,7 @@ export default function BatteryInputFlow({ onAssessmentComplete, onError }) {
             className={`p-3 rounded-xl border transition-all ${
               hasPhysicalDamage
                 ? 'bg-rose-950/30 border-rose-800/60 ring-1 ring-rose-500/30'
-                : 'bg-slate-950/50 border-slate-800/80'
+                : 'bg-[#0B1117]/50 border-slate-800/80'
             }`}
           >
             <div className="flex items-center justify-between">
@@ -446,7 +446,7 @@ export default function BatteryInputFlow({ onAssessmentComplete, onError }) {
             className={`p-3 rounded-xl border transition-all ${
               hasThermalIrregularity
                 ? 'bg-rose-950/30 border-rose-800/60 ring-1 ring-rose-500/30'
-                : 'bg-slate-950/50 border-slate-800/80'
+                : 'bg-[#0B1117]/50 border-slate-800/80'
             }`}
           >
             <div className="flex items-center justify-between">
@@ -480,11 +480,11 @@ export default function BatteryInputFlow({ onAssessmentComplete, onError }) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-3.5 px-6 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600 text-slate-950 hover:brightness-110 shadow-lg shadow-cyan-950/60 transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-50 cursor-pointer"
+          className="w-full py-3.5 px-6 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-500 via-teal-500 to-[#4DA3FF] text-[#0B1117] hover:brightness-110 shadow-lg shadow-cyan-950/60 transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-50 cursor-pointer"
         >
           {isSubmitting ? (
             <>
-              <span className="w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" />
+              <span className="w-4 h-4 border-2 border-[#0B1117] border-t-transparent rounded-full animate-spin" />
               <span>Running Battery Decision Engine...</span>
             </>
           ) : (

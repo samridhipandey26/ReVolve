@@ -113,7 +113,7 @@ export default function App() {
 
   // Otherwise on Assessment App route "/app"
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-emerald-500 selection:text-slate-950 font-sans">
+    <div className="min-h-screen bg-[#0B1117] text-slate-100 flex flex-col selection:bg-[#FF7A3D] selection:text-[#0B1117] font-sans">
       {/* 1. Header with Reset Control and Back to Home Navigation */}
       <Header
         onResetSession={handleResetSession}
@@ -128,7 +128,7 @@ export default function App() {
           <button
             type="button"
             onClick={() => navigateTo('/')}
-            className="inline-flex items-center space-x-2 text-xs font-semibold text-slate-400 hover:text-emerald-400 transition-colors cursor-pointer group"
+            className="inline-flex items-center space-x-2 text-xs font-semibold text-slate-400 hover:text-[#FFB547] transition-colors cursor-pointer group"
           >
             <span className="group-hover:-translate-x-1 transition-transform">←</span>
             <span>Back to Home</span>
@@ -155,7 +155,7 @@ export default function App() {
         )}
 
         {/* 2. Stream Switcher Tabs: Construction Debris vs EV Battery */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 bg-slate-900/60 p-2 rounded-2xl border border-slate-800 backdrop-blur-md">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 bg-[#121B24]/60 p-2 rounded-2xl border border-slate-800 backdrop-blur-md">
           <div className="grid grid-cols-2 gap-2 flex-1">
             {/* Stream A Tab */}
             <button
@@ -163,8 +163,8 @@ export default function App() {
               onClick={() => setActiveStream('construction')}
               className={`flex items-center justify-center space-x-3 px-5 py-3.5 rounded-xl font-bold text-sm transition-all duration-200 cursor-pointer ${
                 activeStream === 'construction'
-                  ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg shadow-emerald-950/50 ring-1 ring-emerald-400/30'
-                  : 'bg-slate-900/80 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80'
+                  ? 'bg-gradient-to-r from-orange-600 to-teal-600 text-white shadow-lg shadow-orange-950/50 ring-1 ring-[#FFB547]/30'
+                  : 'bg-[#121B24]/80 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80'
               }`}
             >
               <span className="text-xl">🏗️</span>
@@ -180,8 +180,8 @@ export default function App() {
               onClick={() => setActiveStream('battery')}
               className={`flex items-center justify-center space-x-3 px-5 py-3.5 rounded-xl font-bold text-sm transition-all duration-200 cursor-pointer ${
                 activeStream === 'battery'
-                  ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-lg shadow-cyan-950/50 ring-1 ring-cyan-400/30'
-                  : 'bg-slate-900/80 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80'
+                  ? 'bg-gradient-to-r from-cyan-600 to-[#4DA3FF] text-white shadow-lg shadow-cyan-950/50 ring-1 ring-cyan-400/30'
+                  : 'bg-[#121B24]/80 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80'
               }`}
             >
               <span className="text-xl">⚡</span>
@@ -232,7 +232,7 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800/80 bg-slate-950/90 py-6 text-center text-xs text-slate-500">
+      <footer className="border-t border-slate-800/80 bg-[#0B1117]/90 py-6 text-center text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <span>ReVolve — Circular Waste-Recovery Platform &copy; Smart India Hackathon</span>
           <span className="text-slate-600">Built for Smart India Hackathon</span>

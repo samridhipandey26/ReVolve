@@ -9,10 +9,10 @@ const PATHWAY_ROWS = [
     key: 'Reuse',
     label: 'Reused',
     icon: '♺',
-    barColor: 'bg-emerald-500',
-    textColor: 'text-emerald-400',
-    bgColor: 'bg-emerald-500/10',
-    borderColor: 'border-emerald-500/20',
+    barColor: 'bg-[#FF7A3D]',
+    textColor: 'text-[#FFB547]',
+    bgColor: 'bg-[#FF7A3D]/10',
+    borderColor: 'border-[#FF7A3D]/20',
   },
   {
     key: 'Refurbishment',
@@ -77,7 +77,7 @@ export default function CumulativeImpactWidget({ impactData, onReset }) {
 
   return (
     <div
-      className={`rounded-2xl border bg-slate-900/90 backdrop-blur-xl p-5 shadow-xl shadow-black/40 transition-all duration-500 ${
+      className={`rounded-2xl border bg-[#121B24]/90 backdrop-blur-xl p-5 shadow-xl shadow-black/40 transition-all duration-500 ${
         isEmpty ? 'border-slate-800/50 opacity-70' : 'border-slate-800'
       }`}
     >
@@ -87,7 +87,7 @@ export default function CumulativeImpactWidget({ impactData, onReset }) {
           <div className="flex items-center space-x-2.5 mb-0.5">
             <div
               className={`w-2.5 h-2.5 rounded-full shrink-0 ${
-                isEmpty ? 'bg-slate-600' : 'bg-emerald-400 animate-pulse'
+                isEmpty ? 'bg-slate-600' : 'bg-[#FFB547] animate-pulse'
               }`}
             />
             <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
@@ -116,18 +116,18 @@ export default function CumulativeImpactWidget({ impactData, onReset }) {
           {/* Primary Key Metric Counters */}
           <div className="grid grid-cols-2 gap-3 mb-5">
             {/* Metric 1: Total Value */}
-            <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80">
+            <div className="p-3 rounded-xl bg-[#0B1117]/70 border border-slate-800/80">
               <div className="text-[10px] font-semibold uppercase tracking-wider text-slate-400 mb-1">
                 Value Recovered
               </div>
-              <div className="text-base sm:text-lg font-extrabold text-emerald-300 font-mono leading-none">
+              <div className="text-base sm:text-lg font-extrabold text-orange-300 font-mono leading-none">
                 {formatted_total_value}
               </div>
               <div className="text-[10px] text-slate-500 mt-0.5">estimated savings</div>
             </div>
 
             {/* Metric 2: Waste Diverted */}
-            <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80">
+            <div className="p-3 rounded-xl bg-[#0B1117]/70 border border-slate-800/80">
               <div className="text-[10px] font-semibold uppercase tracking-wider text-slate-400 mb-1">
                 Landfill Diverted
               </div>

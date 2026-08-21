@@ -8,9 +8,9 @@ const PATHWAYS_DATA = [
     id: 'Reuse',
     name: 'Reuse',
     icon: '♺',
-    badgeClass: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/40',
-    barColor: 'from-emerald-500 to-green-400',
-    borderHover: 'hover:border-emerald-500/60 hover:shadow-emerald-950/40',
+    badgeClass: 'bg-[#FF7A3D]/15 text-orange-300 border-[#FF7A3D]/40',
+    barColor: 'from-[#FF7A3D] to-green-400',
+    borderHover: 'hover:border-[#FF7A3D]/60 hover:shadow-orange-950/40',
     tagline: 'Direct Salvage & Deployment',
     description:
       'Structurally sound elements are cleaned and immediately redeployed in new construction or vehicles without energy-intensive remanufacturing.',
@@ -21,7 +21,7 @@ const PATHWAYS_DATA = [
     name: 'Refurbishment',
     icon: '🛠️',
     badgeClass: 'bg-teal-500/15 text-teal-300 border-teal-500/40',
-    barColor: 'from-teal-500 to-emerald-400',
+    barColor: 'from-teal-500 to-[#FFB547]',
     borderHover: 'hover:border-teal-500/60 hover:shadow-teal-950/40',
     tagline: 'Mechanical Restoration & Repair',
     description:
@@ -113,39 +113,39 @@ export default function LandingPage({ onStartAssessment }) {
   const [activePathwayTab, setActivePathwayTab] = useState('Reuse')
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-slate-950">
+    <div className="min-h-screen bg-[#0B1117] text-slate-100 flex flex-col font-sans selection:bg-[#FF7A3D] selection:text-[#0B1117]">
       {/* 1. Global Navigation Bar */}
-      <header className="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-xl sticky top-0 z-50">
+      <header className="border-b border-slate-800/80 bg-[#0B1117]/80 backdrop-blur-xl sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Brand Logo */}
             <div className="flex items-center space-x-3.5">
-              <div className="relative flex items-center justify-center w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-400 p-[1.5px] shadow-lg shadow-emerald-500/20">
-                <div className="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center">
-                  <span className="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-200">
+              <div className="relative flex items-center justify-center w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#FF7A3D] via-teal-400 to-cyan-400 p-[1.5px] shadow-lg shadow-[#FF7A3D]/20">
+                <div className="w-full h-full bg-[#0B1117] rounded-[14px] flex items-center justify-center">
+                  <span className="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-r from-[#FFB547] to-teal-200">
                     ♺
                   </span>
                 </div>
               </div>
               <div className="flex items-center space-x-2.5">
                 <span className="text-2xl font-black font-heading tracking-tight text-white">
-                  Re<span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-300">Volve</span>
+                  Re<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FFB547] to-teal-300">Volve</span>
                 </span>
               </div>
             </div>
 
             {/* Nav Links & CTA */}
             <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
-              <a href="#the-problem" className="hover:text-emerald-400 transition-colors">
+              <a href="#the-problem" className="hover:text-[#FFB547] transition-colors">
                 The Problem
               </a>
-              <a href="#how-it-works" className="hover:text-emerald-400 transition-colors">
+              <a href="#how-it-works" className="hover:text-[#FFB547] transition-colors">
                 How It Works
               </a>
-              <a href="#pathways" className="hover:text-emerald-400 transition-colors">
+              <a href="#pathways" className="hover:text-[#FFB547] transition-colors">
                 5 Pathways
               </a>
-              <a href="#features" className="hover:text-emerald-400 transition-colors">
+              <a href="#features" className="hover:text-[#FFB547] transition-colors">
                 Features
               </a>
             </nav>
@@ -154,7 +154,7 @@ export default function LandingPage({ onStartAssessment }) {
             <button
               type="button"
               onClick={onStartAssessment}
-              className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 text-slate-950 hover:brightness-110 shadow-lg shadow-emerald-950/60 transition-all duration-200 cursor-pointer active:scale-95"
+              className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-gradient-to-r from-[#FF7A3D] via-teal-500 to-orange-600 text-[#0B1117] hover:brightness-110 shadow-lg shadow-orange-950/60 transition-all duration-200 cursor-pointer active:scale-95"
             >
               <span>Start Assessment</span>
               <span className="text-base">→</span>
@@ -166,24 +166,24 @@ export default function LandingPage({ onStartAssessment }) {
       {/* 2. Hero Section */}
       <section className="relative pt-12 pb-20 sm:pt-20 sm:pb-28 overflow-hidden">
         {/* Subtle Ambient Background Gradients */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-emerald-500/10 via-teal-500/10 to-cyan-500/5 blur-[120px] pointer-events-none -z-10 rounded-full" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-[#FF7A3D]/10 via-teal-500/10 to-cyan-500/5 blur-[120px] pointer-events-none -z-10 rounded-full" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left Column: Headline, Subtitle & CTAs */}
             <div className="lg:col-span-7 space-y-7 text-center lg:text-left">
               {/* Badge */}
-              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-300 shadow-inner">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#121B24] border border-slate-800 text-xs font-semibold text-slate-300 shadow-inner">
+                <span className="w-2 h-2 rounded-full bg-[#FFB547] animate-pulse" />
                 <span>AI Circular Economy Decision Engine</span>
                 <span className="text-slate-600">•</span>
-                <span className="text-emerald-400 font-bold">Two Streams • Five Pathways</span>
+                <span className="text-[#FFB547] font-bold">Two Streams • Five Pathways</span>
               </div>
 
               {/* Primary Approved Headline */}
               <h1 className="text-4xl sm:text-6xl lg:text-6xl font-black font-heading text-white tracking-tight leading-[1.1]">
                 Don’t scrap it.{' '}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FFB547] via-teal-300 to-cyan-400">
                   ReVolve it.
                 </span>
               </h1>
@@ -198,7 +198,7 @@ export default function LandingPage({ onStartAssessment }) {
                 <button
                   type="button"
                   onClick={onStartAssessment}
-                  className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 text-slate-950 hover:brightness-110 shadow-xl shadow-emerald-950/60 transition-all duration-200 flex items-center justify-center space-x-3 cursor-pointer group active:scale-95"
+                  className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base bg-gradient-to-r from-[#FF7A3D] via-teal-500 to-orange-600 text-[#0B1117] hover:brightness-110 shadow-xl shadow-orange-950/60 transition-all duration-200 flex items-center justify-center space-x-3 cursor-pointer group active:scale-95"
                 >
                   <span>Start Assessment</span>
                   <span className="group-hover:translate-x-1 transition-transform">➔</span>
@@ -206,7 +206,7 @@ export default function LandingPage({ onStartAssessment }) {
 
                 <a
                   href="#pathways"
-                  className="w-full sm:w-auto px-6 py-4 rounded-xl font-semibold text-sm bg-slate-900/90 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition-all flex items-center justify-center space-x-2"
+                  className="w-full sm:w-auto px-6 py-4 rounded-xl font-semibold text-sm bg-[#121B24]/90 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition-all flex items-center justify-center space-x-2"
                 >
                   <span>Explore the 5 Pathways</span>
                   <span>↓</span>
@@ -216,7 +216,7 @@ export default function LandingPage({ onStartAssessment }) {
               {/* Trust & Guarantee Markers */}
               <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-400 font-medium">
                 <div className="flex items-center space-x-2">
-                  <span className="text-emerald-400">✓</span>
+                  <span className="text-[#FFB547]">✓</span>
                   <span>Instant On-Site Assessment</span>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -232,8 +232,8 @@ export default function LandingPage({ onStartAssessment }) {
 
             {/* Right Column: Interactive Live Decision Showcase Preview */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-3xl p-[1px] bg-gradient-to-b from-slate-700/60 via-slate-800/40 to-slate-900/80 shadow-2xl shadow-black/80">
-                <div className="rounded-[23px] bg-slate-900/95 backdrop-blur-xl p-6 sm:p-7 space-y-6">
+              <div className="relative rounded-3xl p-[1px] bg-gradient-to-b from-slate-700/60 via-slate-800/40 to-[#121B24]/80 shadow-2xl shadow-black/80">
+                <div className="rounded-[23px] bg-[#121B24]/95 backdrop-blur-xl p-6 sm:p-7 space-y-6">
                   {/* Interactive Switcher Header */}
                   <div className="flex items-center justify-between border-b border-slate-800 pb-4">
                     <div>
@@ -242,18 +242,18 @@ export default function LandingPage({ onStartAssessment }) {
                       </span>
                       <div className="text-sm font-bold text-white">Instant Triage In Action</div>
                     </div>
-                    <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-bold">
+                    <span className="px-2.5 py-1 rounded-full bg-[#FF7A3D]/10 text-[#FFB547] border border-[#FF7A3D]/20 text-[10px] font-bold">
                       LIVE PREVIEW
                     </span>
                   </div>
 
                   {/* Stream Tabs */}
-                  <div className="grid grid-cols-2 gap-2 bg-slate-950 p-1.5 rounded-xl border border-slate-800/80">
+                  <div className="grid grid-cols-2 gap-2 bg-[#0B1117] p-1.5 rounded-xl border border-slate-800/80">
                     <button
                       type="button"
                       onClick={() => setActiveHeroTab('construction')}
                       className={`py-2 px-3 rounded-lg text-xs font-bold transition-all flex items-center justify-center space-x-2 ${activeHeroTab === 'construction'
-                          ? 'bg-emerald-600 text-white shadow-md'
+                          ? 'bg-orange-600 text-white shadow-md'
                           : 'text-slate-400 hover:text-slate-200'
                         }`}
                     >
@@ -283,22 +283,22 @@ export default function LandingPage({ onStartAssessment }) {
                             Precast Concrete Slab (Clean, Structural)
                           </div>
                         </div>
-                        <div className="px-3 py-1 rounded-lg bg-emerald-500/15 text-emerald-300 border border-emerald-500/40 text-xs font-extrabold flex items-center space-x-1.5">
+                        <div className="px-3 py-1 rounded-lg bg-[#FF7A3D]/15 text-orange-300 border border-[#FF7A3D]/40 text-xs font-extrabold flex items-center space-x-1.5">
                           <span>♺</span>
                           <span>Reuse</span>
                         </div>
                       </div>
 
-                      <div className="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-xs text-slate-300 leading-relaxed">
-                        <strong className="text-emerald-400">Why we recommend this:</strong> Pristine structural concrete elements qualify for direct modular reuse in structural construction, retaining high embodied carbon.
+                      <div className="p-3.5 rounded-xl bg-[#0B1117]/70 border border-slate-800 text-xs text-slate-300 leading-relaxed">
+                        <strong className="text-[#FFB547]">Why we recommend this:</strong> Pristine structural concrete elements qualify for direct modular reuse in structural construction, retaining high embodied carbon.
                       </div>
 
                       <div className="grid grid-cols-2 gap-3 pt-1">
-                        <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+                        <div className="p-3 rounded-xl bg-[#0B1117]/60 border border-slate-800">
                           <div className="text-[10px] text-slate-400 uppercase font-semibold">Value Recovered</div>
-                          <div className="text-sm font-bold text-emerald-300">₹5,200 <span className="text-[10px] text-slate-500">(vs ₹1,600 scrap)</span></div>
+                          <div className="text-sm font-bold text-orange-300">₹5,200 <span className="text-[10px] text-slate-500">(vs ₹1,600 scrap)</span></div>
                         </div>
-                        <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+                        <div className="p-3 rounded-xl bg-[#0B1117]/60 border border-slate-800">
                           <div className="text-[10px] text-slate-400 uppercase font-semibold">CO₂e Embodied Saved</div>
                           <div className="text-sm font-bold text-teal-300">~420 kg CO₂e</div>
                         </div>
@@ -319,16 +319,16 @@ export default function LandingPage({ onStartAssessment }) {
                         </div>
                       </div>
 
-                      <div className="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-xs text-slate-300 leading-relaxed">
+                      <div className="p-3.5 rounded-xl bg-[#0B1117]/70 border border-slate-800 text-xs text-slate-300 leading-relaxed">
                         <strong className="text-sky-400">Why we recommend this:</strong> Moderate cell degradation exceeds stationary cut-offs. Ideal for secondary solar grid energy storage systems (ESS).
                       </div>
 
                       <div className="grid grid-cols-2 gap-3 pt-1">
-                        <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+                        <div className="p-3 rounded-xl bg-[#0B1117]/60 border border-slate-800">
                           <div className="text-[10px] text-slate-400 uppercase font-semibold">Value Recovered</div>
-                          <div className="text-sm font-bold text-emerald-300">₹48,000 <span className="text-[10px] text-slate-500">(vs ₹12,000 scrap)</span></div>
+                          <div className="text-sm font-bold text-orange-300">₹48,000 <span className="text-[10px] text-slate-500">(vs ₹12,000 scrap)</span></div>
                         </div>
-                        <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+                        <div className="p-3 rounded-xl bg-[#0B1117]/60 border border-slate-800">
                           <div className="text-[10px] text-slate-400 uppercase font-semibold">Landfill Diverted</div>
                           <div className="text-sm font-bold text-cyan-300">320 kg Pack Mass</div>
                         </div>
@@ -353,10 +353,10 @@ export default function LandingPage({ onStartAssessment }) {
       </section>
 
       {/* 3. The Problem Section */}
-      <section id="the-problem" className="py-16 sm:py-24 border-t border-slate-800/80 bg-slate-900/30">
+      <section id="the-problem" className="py-16 sm:py-24 border-t border-slate-800/80 bg-[#121B24]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-emerald-400">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#FFB547]">
               The Heavy Waste Crisis
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
@@ -371,13 +371,13 @@ export default function LandingPage({ onStartAssessment }) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Stat 1 */}
             {/* TODO: replace with cited real stat */}
-            <div className="glass-card rounded-2xl p-7 relative overflow-hidden group hover:border-emerald-500/40 transition-all duration-300">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all" />
+            <div className="glass-card rounded-2xl p-7 relative overflow-hidden group hover:border-[#FF7A3D]/40 transition-all duration-300">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-[#FF7A3D]/10 rounded-full blur-2xl group-hover:bg-[#FF7A3D]/20 transition-all" />
               <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-800 text-slate-400 uppercase tracking-wider mb-3">
                 Illustrative Metric
               </span>
               <div className="text-4xl sm:text-5xl font-black font-heading text-white mb-2 tracking-tight">
-                3.2B <span className="text-emerald-400 text-2xl">Tons</span>
+                3.2B <span className="text-[#FFB547] text-2xl">Tons</span>
               </div>
               <div className="text-sm font-bold text-slate-200 mb-1">
                 Construction Debris Landfilled Yearly
@@ -445,14 +445,14 @@ export default function LandingPage({ onStartAssessment }) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
             {/* Step 1 */}
             <div className="glass-card rounded-2xl p-8 space-y-4 relative">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center text-2xl font-bold font-heading">
+              <div className="w-12 h-12 rounded-2xl bg-[#FF7A3D]/10 text-[#FFB547] border border-[#FF7A3D]/20 flex items-center justify-center text-2xl font-bold font-heading">
                 1
               </div>
               <h3 className="text-xl font-bold text-white">Choose your item</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
                 Select between <strong className="text-slate-200">Demolition Materials</strong> (concrete, brick, timber, steel) or <strong className="text-slate-200">EV Battery Packs</strong> (NMC, LFP).
               </p>
-              <div className="pt-2 text-xs font-semibold text-emerald-400 flex items-center space-x-1.5">
+              <div className="pt-2 text-xs font-semibold text-[#FFB547] flex items-center space-x-1.5">
                 <span>🏗️ Construction or ⚡ Battery</span>
               </div>
             </div>
@@ -489,10 +489,10 @@ export default function LandingPage({ onStartAssessment }) {
       </section>
 
       {/* 5. The 5 Circular Pathways Interactive Section */}
-      <section id="pathways" className="py-16 sm:py-24 border-t border-slate-800/80 bg-slate-900/30">
+      <section id="pathways" className="py-16 sm:py-24 border-t border-slate-800/80 bg-[#121B24]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl mx-auto text-center space-y-4">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-emerald-400">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#FFB547]">
               The Vocabulary of Circular Economy
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
@@ -512,7 +512,7 @@ export default function LandingPage({ onStartAssessment }) {
                 onClick={() => setActivePathwayTab(pathway.id)}
                 className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center space-x-2 cursor-pointer ${activePathwayTab === pathway.id
                     ? `${pathway.badgeClass} border shadow-lg ring-1 ring-white/10`
-                    : 'bg-slate-900/90 text-slate-400 hover:text-slate-200 border border-slate-800'
+                    : 'bg-[#121B24]/90 text-slate-400 hover:text-slate-200 border border-slate-800'
                   }`}
               >
                 <span>{pathway.icon}</span>
@@ -528,7 +528,7 @@ export default function LandingPage({ onStartAssessment }) {
               <div className="max-w-4xl mx-auto glass-card rounded-3xl p-8 sm:p-10 border border-slate-700/80 shadow-2xl space-y-6 animate-card-appear">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-6">
                   <div className="flex items-center space-x-4">
-                    <div className="text-4xl p-3 rounded-2xl bg-slate-950 border border-slate-800">
+                    <div className="text-4xl p-3 rounded-2xl bg-[#0B1117] border border-slate-800">
                       {current.icon}
                     </div>
                     <div>
@@ -555,8 +555,8 @@ export default function LandingPage({ onStartAssessment }) {
                     </p>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-slate-950/70 border border-slate-800/80">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-1">
+                  <div className="p-4 rounded-2xl bg-[#0B1117]/70 border border-slate-800/80">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#FFB547] mb-1">
                       Real-World Examples:
                     </h4>
                     <p className="text-sm text-slate-300 font-medium">
@@ -574,7 +574,7 @@ export default function LandingPage({ onStartAssessment }) {
               <div
                 key={p.id}
                 onClick={() => setActivePathwayTab(p.id)}
-                className={`p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 cursor-pointer transition-all duration-200 ${p.borderHover} ${activePathwayTab === p.id ? 'ring-2 ring-emerald-400/40 bg-slate-900' : ''
+                className={`p-5 rounded-2xl bg-[#121B24]/60 border border-slate-800/80 cursor-pointer transition-all duration-200 ${p.borderHover} ${activePathwayTab === p.id ? 'ring-2 ring-[#FFB547]/40 bg-[#121B24]' : ''
                   }`}
               >
                 <div className="text-2xl mb-2">{p.icon}</div>
@@ -608,10 +608,10 @@ export default function LandingPage({ onStartAssessment }) {
                 key={feature.title}
                 className="glass-card rounded-2xl p-7 space-y-3.5 hover:border-slate-700 transition-all duration-300 group"
               >
-                <div className="w-12 h-12 rounded-2xl bg-slate-950 border border-slate-800 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-2xl bg-[#0B1117] border border-slate-800 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
                   {feature.icon}
                 </div>
-                <h3 className="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">
+                <h3 className="text-lg font-bold text-white group-hover:text-orange-300 transition-colors">
                   {feature.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
@@ -624,9 +624,9 @@ export default function LandingPage({ onStartAssessment }) {
       </section>
 
       {/* 7. Call To Action Banner */}
-      <section className="py-16 sm:py-20 border-t border-slate-800/80 bg-gradient-to-b from-slate-900/40 to-slate-950 relative overflow-hidden">
+      <section className="py-16 sm:py-20 border-t border-slate-800/80 bg-gradient-to-b from-[#121B24]/40 to-[#0B1117] relative overflow-hidden">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FF7A3D]/10 text-[#FFB547] border border-[#FF7A3D]/20 text-xs font-bold">
             <span>⚡ Ready for Instant Triage</span>
           </div>
 
@@ -642,7 +642,7 @@ export default function LandingPage({ onStartAssessment }) {
             <button
               type="button"
               onClick={onStartAssessment}
-              className="px-10 py-4 rounded-xl font-bold text-base bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 text-slate-950 hover:brightness-110 shadow-2xl shadow-emerald-950/80 transition-all duration-200 inline-flex items-center space-x-3 cursor-pointer active:scale-95"
+              className="px-10 py-4 rounded-xl font-bold text-base bg-gradient-to-r from-[#FF7A3D] via-teal-500 to-orange-600 text-[#0B1117] hover:brightness-110 shadow-2xl shadow-orange-950/80 transition-all duration-200 inline-flex items-center space-x-3 cursor-pointer active:scale-95"
             >
               <span>Launch ReVolve Assessment</span>
               <span className="text-lg">➔</span>
@@ -652,13 +652,13 @@ export default function LandingPage({ onStartAssessment }) {
       </section>
 
       {/* 8. Modern Footer */}
-      <footer className="border-t border-slate-800/80 bg-slate-950 py-12 text-slate-400 text-xs">
+      <footer className="border-t border-slate-800/80 bg-[#0B1117] py-12 text-slate-400 text-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Left: Brand */}
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 p-[1px] flex items-center justify-center">
-                <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center text-emerald-400 font-bold">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#FF7A3D] to-teal-400 p-[1px] flex items-center justify-center">
+                <div className="w-full h-full bg-[#0B1117] rounded-[10px] flex items-center justify-center text-[#FFB547] font-bold">
                   ♺
                 </div>
               </div>
@@ -672,9 +672,6 @@ export default function LandingPage({ onStartAssessment }) {
 
             {/* Right: Hackathon Tag */}
             <div className="flex items-center space-x-4 text-slate-400">
-              <span className="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-semibold text-emerald-400">
-                Smart India Hackathon MVP
-              </span>
               <span>&copy; {new Date().getFullYear()} ReVolve</span>
             </div>
           </div>

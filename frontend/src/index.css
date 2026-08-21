@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-slate-950 text-slate-100 min-h-screen antialiased selection:bg-emerald-500 selection:text-slate-950 font-sans;
+    @apply bg-[#0B1117] text-slate-100 min-h-screen antialiased selection:bg-[#FF7A3D] selection:text-[#0B1117] font-sans;
   }
 
   h1,
@@ -27,11 +27,11 @@
   }
 
   .glass-card {
-    @apply bg-slate-900/75 backdrop-blur-xl border border-slate-800/80 shadow-xl shadow-black/40;
+    @apply bg-[#121B24]/75 backdrop-blur-xl border border-slate-800/80 shadow-xl shadow-black/40;
   }
 
   .glass-card-hover {
-    @apply transition-all duration-300 hover:border-slate-700 hover:bg-slate-900/90 hover:shadow-2xl hover:shadow-emerald-950/20;
+    @apply transition-all duration-300 hover:border-slate-700 hover:bg-[#121B24]/90 hover:shadow-2xl hover:shadow-orange-950/20;
   }
 }
 

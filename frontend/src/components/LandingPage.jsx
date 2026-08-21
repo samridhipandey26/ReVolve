@@ -131,9 +131,6 @@ export default function LandingPage({ onStartAssessment }) {
                 <span className="text-2xl font-black font-heading tracking-tight text-white">
                   Re<span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-300">Volve</span>
                 </span>
-                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  SIH MVP
-                </span>
               </div>
             </div>
 

@@ -22,9 +22,6 @@ export default function Header({ onResetSession, isResetting, onNavigateHome }) 
                 <h1 className="text-xl sm:text-2xl font-black tracking-tight text-white font-heading">
                   Re<span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-300">Volve</span>
                 </h1>
-                <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  SIH MVP
-                </span>
               </div>
               <p className="text-xs sm:text-sm text-slate-400 font-medium">
                 One triage engine. Two waste streams. Five circular pathways.
